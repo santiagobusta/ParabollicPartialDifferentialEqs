@@ -1,10 +1,13 @@
 # ParabollicPartialDifferentialEqs
-C++ namespace for solving parabollic partial differential equations
+C++ namespace for solving and testing parabollic partial differential equations
 
 ## Methods:
 
-\begin{itemize}
- \item Forward Difference Method
-\end{itemize}
+Forward Difference Method
+Backward Difference Method
+Crank-Nicolson Method
 
 ## Metrics:
+
+Mean Squared Error
+Root Mean Squared Error

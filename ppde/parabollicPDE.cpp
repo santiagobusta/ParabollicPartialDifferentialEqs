@@ -87,7 +87,12 @@ void ParabollicPDE::setcn( double c )
 //Funciones get
 vector<double> ParabollicPDE::getx()
 {
-	return x;
+  return x;
+}
+
+vector<double> ParabollicPDE::getu()
+{
+  return u;
 }
 
 //Funciones para el metodo Forward Difference Method

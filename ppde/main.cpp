@@ -21,7 +21,7 @@ double rmse( vector<double> , vector<double> );
 int main()
 {
 	//primer punto del Burden
-	vector<double> u0(100);
+	vector<double> u0( 100 );
 	string archivo1 = "data/punto1fdm.txt";
 	string archivo2 = "data/punto1bdm.txt";
 	string archivo3 = "data/punto1cn.txt";
@@ -49,8 +49,8 @@ int main()
 	int posdel;
 	double t = 0.;
 
-	datos.open( archivo1.c_str() );
-	rmsedatos.open( "data/rmsefdm.txt" );
+	datos.open( archivo3.c_str() );
+	rmsedatos.open( "data/rmsecn.txt" );
 
 	  if( datos.fail() || rmsedatos.fail() )
 	  {
@@ -72,7 +72,7 @@ int main()
 		  }
 
 		// asignamos la y exacta
-		for( i = 0 ; i < 100 ; i++ ) y0[i] = uexact( i * 20./100. , t );
+		for( i = 0 ; i < 100 ; i++ ) y0[i] = uexact( i * 2.0/99 , t );
 
 		t += 0.1/100.;
 
@@ -104,7 +104,7 @@ double uf(double t)
 
 double uexact( double x , double t )
 {
-  return exp(-1 * M_PI * M_PI * t ) * sin( M_PI * x );
+  return exp( -0.25 * M_PI * M_PI * t ) * sin(0.5 * M_PI * x );
 }
 
 double rmse( vector<double> y , vector<double> y0 )

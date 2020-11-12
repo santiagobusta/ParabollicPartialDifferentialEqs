@@ -20,6 +20,7 @@ class ParabollicPDE
 
 	// funciones get
 	vector<double> getx();
+	vector<double> getu();
 
 	// funciones metodo Forward Difference Method
 	void fdm( double , int , double (*)( double ) , double (*)( double ) , string );

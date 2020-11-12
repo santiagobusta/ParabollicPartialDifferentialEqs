@@ -6,7 +6,7 @@
 
 using namespace std;
 
-//contructor recive ( vector con las condiciones iniciales de la funcion u (la longitud de este vector define el paso en la coordenada espacial), los limites de la coordenada espacial x0 y xf y el parametro alpha de la ecuacion diferencial )
+//contructor recibe ( vector con las condiciones iniciales de la funcion u (la longitud de este vector define el paso en la coordenada espacial), los limites de la coordenada espacial x0 y xf y el parametro alpha de la ecuacion diferencial )
 ParabollicPDE::ParabollicPDE( vector<double> u0 , double xi , double xf , double alpha )
 {
 	//definicion de variables iniciales
@@ -182,6 +182,7 @@ void ParabollicPDE::bdm( double t , int nt , double (*ui)( double ) , double (*u
 		saveline( u , archivo );
 	}
 }
+
 //solucion del vector u para un paso temporal 
 void ParabollicPDE::stepbdm( double t , int nt )
 {

@@ -11,6 +11,4 @@ Crank-Nicolson Method
 
 ## Metrics:
 
-Mean Squared Error
-
 Root Mean Squared Error

@@ -30,17 +30,18 @@ int main()
 
 	for( i = 0 ; i < 100 ; i++ )
 		{
-			u0[i] = sin((0.5*M_PI*i*2.0)/99);
+		  u0[i] = i * 2.0 / 99 * ( 2. - i*2.0/99 ) * ( sin( 0.5*M_PI*i*2.0/99 ) + 0.2* cos( 3 * M_PI *i*2.0/99 ) );
 		}
 
 	ParabollicPDE punto1( u0 , 0.0 , 2.0 , 1.0 );
 
-	punto1.fdm( 0.1 , 100 , zero , zero , archivo1 );
-	punto1.bdm( 0.1 , 100 , zero , zero , archivo2 );
-	punto1.cn( 0.1 , 100 , zero , zero , archivo3 );
+	punto1.fdm( 1 , 100 , zero , zero , archivo1 );
+	punto1.bdm( 0.6 , 500 , zero , zero , archivo2 );
+	punto1.cn( 1 , 100 , zero , zero , archivo3 );
 
 	// a partir de aqui se halla el rmse de las soluciones
-	
+	/*
+
 	ifstream datos;
 	ofstream rmsedatos;
 	string linea;
@@ -49,6 +50,7 @@ int main()
 	int posdel;
 	double t = 0.;
 
+	
 	datos.open( archivo3.c_str() );
 	rmsedatos.open( "data/rmsecn.txt" );
 
@@ -83,7 +85,7 @@ int main()
 
 	datos.close();
 	rmsedatos.close();
-	
+	*/
 	return 0;
 }
 
